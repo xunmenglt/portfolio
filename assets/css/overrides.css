@@ -31,7 +31,7 @@
 .identity-statement { max-width: 650px; margin: 0; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.9; }
 .identity-links { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 38px; }
 .identity-side { align-self: end; display: grid; grid-template-columns: 112px 1fr; gap: 0 24px; }
-.identity-side .portrait { width: 112px; height: 145px; object-fit: cover; object-position: top; border-radius: 2px; filter: grayscale(1); }
+.identity-side .portrait { width: 112px; height: 145px; object-fit: cover; object-position: top; border-radius: 2px; }
 .identity-facts { display: flex; flex-direction: column; justify-content: center; gap: 7px; font-size: 14px; color: var(--muted); }
 .identity-facts span:first-child { color: var(--ink); font-size: 16px; font-weight: 600; }
 .identity-facts a { color: inherit; }
@@ -633,6 +633,30 @@
   font-size: 14px;
 }
 
+.life-section {
+  display: grid;
+  grid-template-columns: .72fr 1.28fr;
+  gap: clamp(30px, 6vw, 88px);
+  align-items: end;
+  padding-top: 72px;
+  padding-bottom: 112px;
+}
+
+.life-copy { padding-bottom: 4px; }
+.life-copy .eyebrow { margin-bottom: 15px; }
+.life-copy h2 { margin: 0 0 20px; font-family: var(--serif); font-size: clamp(35px, 4vw, 58px); font-weight: 500; line-height: 1.08; letter-spacing: -.06em; }
+.life-copy p:last-child { max-width: 350px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+.life-gallery { display: grid; grid-template-columns: 1.08fr .92fr; grid-template-rows: 1fr 1fr; gap: 13px; }
+.life-gallery figure { position: relative; min-height: 185px; margin: 0; overflow: hidden; background: #e8eaec; }
+.life-gallery .life-tall { grid-row: 1 / span 2; min-height: 385px; }
+.life-gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
+.life-gallery figure:hover img { transform: scale(1.035); }
+.life-gallery figcaption { position: absolute; right: 0; bottom: 0; padding: 7px 10px; background: rgba(17,19,23,.78); color: #fff; font-size: 11px; }
+
 @media (max-width: 760px) {
   .project-page .pmr-grid { margin-bottom: 0; }
+  .life-section { grid-template-columns: 1fr; gap: 30px; padding-top: 48px; padding-bottom: 76px; }
+  .life-gallery { grid-template-columns: 1fr 1fr; }
+  .life-gallery .life-tall { min-height: 300px; }
+  .life-gallery figure { min-height: 143px; }
 }
