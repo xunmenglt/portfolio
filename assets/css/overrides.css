@@ -646,9 +646,14 @@
 .life-copy .eyebrow { margin-bottom: 15px; }
 .life-copy h2 { margin: 0 0 20px; font-family: var(--serif); font-size: clamp(35px, 4vw, 58px); font-weight: 500; line-height: 1.08; letter-spacing: -.06em; }
 .life-copy p:last-child { max-width: 350px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
-.life-gallery { display: grid; grid-template-columns: 1.08fr .92fr; grid-template-rows: 1fr 1fr; gap: 13px; }
-.life-gallery figure { position: relative; min-height: 185px; margin: 0; overflow: hidden; background: #e8eaec; }
-.life-gallery .life-tall { grid-row: 1 / span 2; min-height: 385px; }
+.life-gallery { display: grid; grid-template-columns: repeat(12, 1fr); grid-template-rows: 165px 165px 170px; gap: 13px; }
+.life-gallery figure { position: relative; min-height: 0; margin: 0; overflow: hidden; background: #e8eaec; }
+.life-gallery .life-tall { grid-column: 1 / span 5; grid-row: 1 / span 2; }
+.life-gallery figure:nth-child(2) { grid-column: 6 / span 4; grid-row: 1; }
+.life-gallery figure:nth-child(3) { grid-column: 10 / span 3; grid-row: 1; }
+.life-gallery .life-sunset { grid-column: 6 / span 4; grid-row: 2 / span 2; }
+.life-gallery figure:nth-child(5) { grid-column: 10 / span 3; grid-row: 2; }
+.life-gallery figure:nth-child(6) { grid-column: 10 / span 3; grid-row: 3; }
 .life-gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
 .life-gallery figure:hover img { transform: scale(1.035); }
 .life-gallery figcaption { position: absolute; right: 0; bottom: 0; padding: 7px 10px; background: rgba(17,19,23,.78); color: #fff; font-size: 11px; }
@@ -656,7 +661,7 @@
 @media (max-width: 760px) {
   .project-page .pmr-grid { margin-bottom: 0; }
   .life-section { grid-template-columns: 1fr; gap: 30px; padding-top: 48px; padding-bottom: 76px; }
-  .life-gallery { grid-template-columns: 1fr 1fr; }
-  .life-gallery .life-tall { min-height: 300px; }
-  .life-gallery figure { min-height: 143px; }
+  .life-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 170px); }
+  .life-gallery .life-tall { grid-column: auto; grid-row: auto; }
+  .life-gallery figure:nth-child(2), .life-gallery figure:nth-child(3), .life-gallery .life-sunset, .life-gallery figure:nth-child(5), .life-gallery figure:nth-child(6) { grid-column: auto; grid-row: auto; }
 }
