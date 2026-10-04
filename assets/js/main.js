@@ -22,3 +22,17 @@ if ('IntersectionObserver' in window) {
 } else {
   revealItems.forEach((item) => item.classList.add('visible'));
 }
+
+const carousel = document.querySelector('.portfolio-carousel');
+const previousCard = document.querySelector('.carousel-prev');
+const nextCard = document.querySelector('.carousel-next');
+
+if (carousel) {
+  const moveCarousel = (direction) => {
+    const card = carousel.querySelector('.portfolio-card');
+    const distance = (card?.getBoundingClientRect().width || 320) + 16;
+    carousel.scrollBy({ left: direction * distance, behavior: 'smooth' });
+  };
+  previousCard?.addEventListener('click', () => moveCarousel(-1));
+  nextCard?.addEventListener('click', () => moveCarousel(1));
+}

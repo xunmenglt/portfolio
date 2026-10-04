@@ -1,4 +1,9 @@
 /* Small layout refinements kept separate from the shared stylesheet. */
+:root {
+  --accent: #627bff;
+  --serif: "Iowan Old Style", "Songti SC", "STSong", Georgia, serif;
+}
+
 .home-hero h1 {
   font-size: clamp(48px, 6vw, 82px);
 }
@@ -608,4 +613,26 @@
   .gallery-grid img {
     height: 240px;
   }
+}
+
+/* Keep the project pages intentional when legacy gallery rules are present. */
+.project-page .pmr-grid {
+  margin-bottom: 0;
+}
+
+.project-page .pmr-grid h2 {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: clamp(26px, 2.8vw, 38px);
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.05em;
+}
+
+.project-page .pmr-grid p:last-child {
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  .project-page .pmr-grid { margin-bottom: 0; }
 }
