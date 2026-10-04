@@ -5,6 +5,7 @@
 ## 页面结构
 
 - `index.html`：作品集首页与项目入口
+- `resume.html`：教育、实习、研究、竞赛与专业技能
 - `cad-system.html`：广诚 CAD 内容识别系统
 - `ai-projects.html`：金融垂域模型、Codura、智能审查与人才引擎
 - `assets/`：从用户提供的 PPT 中提取的界面素材，以及样式和交互脚本

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="刘腾的教育背景、研究经历、实习项目、竞赛奖项与专业技能。" />
+    <title>个人简历｜刘腾 AI 项目作品集</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/overrides.css" />
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body class="detail-page resume-page">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="返回首页">LT<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false">菜单</button>
+      <nav class="site-nav" aria-label="主导航"><a href="index.html">首页</a><a class="active" href="resume.html">个人简历</a><a href="cad-system.html">工程智能</a><a href="ai-projects.html">大模型应用</a></nav>
+    </header>
+    <main>
+      <section class="resume-hero section-wrap">
+        <div class="resume-identity"><p class="eyebrow">CURRICULUM VITAE</p><h1>刘腾</h1><p class="resume-position">大模型应用 · 多模态检索 · 智能系统</p><div class="resume-contact"><a href="tel:15179522239">151 7952 2239</a><a href="mailto:xmliuteng@163.com">xmliuteng@163.com</a></div></div>
+        <img class="portrait" src="assets/images/liu-teng.jpg" alt="刘腾的证件照" />
+      </section>
+
+      <section class="section-wrap resume-section reveal">
+        <div class="resume-section-label"><p class="eyebrow">01</p><h2>教育背景</h2></div>
+        <div class="resume-content timeline-list">
+          <article><div><h3>苏州大学</h3><p>计算机科学与技术学院 · 计算机技术 · 硕士（推免）</p></div><time>2024.09 – 至今</time></article>
+          <article><div><h3>华东交通大学</h3><p>软件学院 · 软件工程 · 学士</p><p class="highlight-line">GPA 4.12/5 · 排名 1/139 · 国家奖学金 · 校长提名奖（全校 Top 20）· 校特等奖学金</p></div><time>2020.09 – 2024.06</time></article>
+        </div>
+      </section>
+
+      <section class="section-wrap resume-section reveal">
+        <div class="resume-section-label"><p class="eyebrow">02</p><h2>实习与项目经历</h2></div>
+        <div class="resume-content experience-list">
+          <article><header><div><p class="eyebrow">ALGORITHM RESEARCH INTERN</p><h3>面向多模态网页和文档的全模态检索算法研究</h3><p>蚂蚁集团 · 研究型算法实习生</p></div><time>2026.04 – 2026.09</time></header><p>研究图文跨模态对齐的统一表征学习方法，以提高全网搜索场景下多模态网页与文档的检索召回效果。</p><ul><li>使用 Qwen3-VL-30B-A3B 完成 2D BBox 标注并修正 MSCOCO 错误标注，围绕不同检索目标生成任务感知的 COT 推理轨迹。</li><li>基于 Qwen3-VL-2B 训练 Embedding 模型，将 30B Teacher 推理数据蒸馏至 Qwen3-VL-8B Reasoner，并结合 GRPO 优化推理效果。</li><li>采用基于 SVD 的多任务 LoRA 适配器融合；在 MMEBv1 上，8B / 30B Reasoner 较 Btoks-2B 基线分别提升 2.6% 和 3.8%。</li></ul></article>
+          <article><header><div><p class="eyebrow">INDUSTRY COLLABORATION</p><h3>面向合同内容的可信风险监测</h3><p>校企合作项目</p></div><time>2025.01 – 2025.07</time></header><p>构建合同全生命周期辅助方案，提供智能模板推荐、风险审查与规章比对服务。</p><ul><li>利用 LLM 和提示词设计生成实体与关系类型，使用 PMI 筛选高频贡献实体类型对；通过 LightRAG 构建知识图谱，检索召回率较企业内部模板检索系统提升 32%。</li><li>采用 PlanAndExecute 架构结合 MCP，集成检索、摘要、对比工具链，构建模板推荐 Agent。</li><li>通过 DOM 解析和行级锚点注入实现审查结果行级追溯，结合规则审查与知识库 RAG；法务采纳率 90%，已落地应用。</li></ul><a class="text-link" href="ai-projects.html#compliance">查看项目详情 <span>↗</span></a></article>
+          <article><header><div><p class="eyebrow">INDUSTRY COLLABORATION</p><h3>面向金融问答垂域模型构建与应用</h3><p>校企合作项目</p></div><time>2024.03 – 2024.12</time></header><p>设计并优化金融垂域问答模型，解决通用大模型在金融政策场景下理解不足、回复准确性差的问题。</p><ul><li>基于规则进行问答对数据增强，使用 LLM 作为裁判对扩充数据进行多维度质量筛选。</li><li>对 ChatGLM3 进行 SFT 与 DPO 两阶段训练，并以 GPT-4 为裁判进行自动评估，问答质量较 GPT-3.5 提升 10.8%。</li><li>在 910B 平台解决 FastChat 的模型多卡部署问题，使用 LangChain 搭建兼容多模型的问答平台。</li></ul><a class="text-link" href="ai-projects.html#finance">查看项目详情 <span>↗</span></a></article>
+        </div>
+      </section>
+
+      <section class="section-wrap resume-section reveal">
+        <div class="resume-section-label"><p class="eyebrow">03</p><h2>科研经历</h2></div>
+        <div class="resume-content research-card"><p class="eyebrow">FIRST AUTHOR · IN PREPARATION · 2026.04 – 2026.08</p><h3><i>KePIR: Guiding Embedding Learning with Key Positional Information for Universal Multimodal Retrieval</i></h3><p>针对通用多模态检索，提出关键位置信息引导的嵌入学习方法 KePIR。方法通过跨模态注意力提取关键文本和视觉 token，结合 visual attention sink 过滤语义无关噪声，并以双解码器掩码重构与对比学习联合优化。</p><p class="research-result">在 M-BEIR 基准上，基于 Qwen3-VL-2B-Instruct，KePIR 平均性能达到 <strong>52.01%</strong>，较 LamRA-Ret 和 CORAL 分别提升 <strong>0.97</strong> 和 <strong>1.79</strong> 个百分点。</p></div>
+      </section>
+
+      <section class="section-wrap resume-section reveal">
+        <div class="resume-section-label"><p class="eyebrow">04</p><h2>竞赛、证书与技能</h2></div>
+        <div class="resume-content"><article class="award-card"><p class="eyebrow">OPENATOM TECORAG CHALLENGE · 2024.10 – 2024.12</p><h3>开放原子大赛 TecoRAG 大模型开发任务挑战赛</h3><strong>第 3 名 / 314 人</strong><p>优化文档读取、混合检索、RRF 融合、Rerank 与二次检索生成策略，最终在数据集上达到 67.74% 的准确率。</p></article><div class="skills-grid"><div><p class="eyebrow">CERTIFICATES</p><p>蓝桥杯 Java（B 组国二）<br />软件设计师（软考中级）<br />国家计算机三级</p></div><div><p class="eyebrow">TECHNICAL SKILLS</p><p>Python / Java / PyTorch / LangChain / Vue / SpringBoot<br />SFT / DPO / GRPO / GraphRAG / transformers / verl / FastChat / vLLM</p></div></div></div>
+      </section>
+    </main>
+    <footer class="site-footer"><span>刘腾 · 苏州大学</span><span>CURRICULUM VITAE</span><a href="index.html">返回作品集首页 →</a></footer>
+  </body>
+</html>
