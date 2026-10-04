@@ -3,127 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="刘腾的人工智能项目作品集，涵盖工程资料识别、金融垂域大模型、智能审查、代码助手和人才数据问答。" />
+    <meta name="description" content="刘腾的人工智能项目作品集：大模型训练、RAG、智能 Agent 与多模态检索。" />
     <title>刘腾｜AI 项目作品集</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/overrides.css" />
     <script defer src="assets/js/main.js"></script>
   </head>
-  <body>
+  <body id="top">
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="返回首页">LT<span>.</span></a>
       <button class="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false">菜单</button>
       <nav class="site-nav" aria-label="主导航">
         <a class="active" href="index.html">首页</a>
-        <a href="resume.html">个人简历</a>
-        <a href="#projects">项目精选</a>
-        <a href="cad-system.html">工程智能</a>
-        <a href="ai-projects.html">大模型应用</a>
+        <a href="#experience">经历</a>
+        <a href="#portfolio">作品集</a>
+        <a href="resume.html">简历</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero home-hero">
-        <div class="hero-copy">
-          <p class="eyebrow">PORTFOLIO · 2026</p>
-          <h1>把复杂业务<br />落成可用的 <em>AI 系统</em></h1>
-          <p class="hero-text">刘腾 · 苏州大学<br />聚焦大模型应用、智能信息抽取与业务系统落地</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#projects">浏览项目</a>
-            <a class="text-link" href="ai-projects.html">查看大模型项目 <span>↗</span></a>
-          </div>
+      <section class="identity section-wrap">
+        <div class="identity-copy reveal">
+          <p class="eyebrow">AI ENGINEER · PORTFOLIO</p>
+          <h1>刘腾<span class="identity-dot">.</span></h1>
+          <p class="identity-role">苏州大学 · 计算机技术硕士</p>
+          <p class="identity-statement">具备扎实的计算机专业基础和大模型算法研究经验，专注于大语言模型、多模态检索、RAG及智能Agent方向。研究生期间持续参与大模型训练与应用落地，具备从数据构建、模型训练、算法优化到系统部署的完整实践经验。</p>
+          <div class="identity-links"><a class="button button-primary" href="#portfolio">浏览作品集</a><a class="text-link" href="resume.html">查看完整简历 <span>↗</span></a></div>
         </div>
-        <div class="hero-orbit" aria-hidden="true">
-          <div class="orbit-core">AI</div>
-          <span class="orbit-tag tag-one">LLM</span>
-          <span class="orbit-tag tag-two">RAG</span>
-          <span class="orbit-tag tag-three">OCR</span>
-          <span class="orbit-tag tag-four">Text-to-SQL</span>
-        </div>
+        <aside class="identity-side reveal" aria-label="个人信息与专业技能">
+          <img class="portrait" src="assets/images/liu-teng.jpg" alt="刘腾" />
+          <div class="identity-facts"><span>苏州大学</span><span>计算机技术 · 硕士（推免）</span><a href="mailto:xmliuteng@163.com">xmliuteng@163.com</a></div>
+          <div class="skill-note"><p class="eyebrow">专业技能</p><p>熟练 Python/Java等语言；掌握 PyTorch/LangChain/Vue/SpringBoot 框架运用；熟悉 SFT/DPO/GRPO 等训练范式，了解 GraphRAG/OpenManus/nanobot/OpenHarness 框架原理；掌握 transformers/verl/FastChat/vLLM 使用。</p></div>
+        </aside>
       </section>
 
-      <section class="section-wrap profile-strip reveal" aria-label="个人信息摘要">
-        <div><p class="eyebrow">EDUCATION</p><strong>苏州大学</strong><span>计算机技术 · 硕士（推免）</span></div>
-        <div><p class="eyebrow">CONTACT</p><strong>151 7952 2239</strong><a href="mailto:xmliuteng@163.com">xmliuteng@163.com</a></div>
-        <div><p class="eyebrow">RESEARCH</p><strong>多模态检索</strong><span>LLM 应用 · RAG · 智能系统</span></div>
-        <a class="profile-arrow" href="resume.html" aria-label="查看完整简历">↗</a>
+      <section class="experience section-wrap" id="experience">
+        <div class="section-heading reveal"><div><p class="eyebrow">EXPERIENCE</p><h2>经历与积累</h2></div><p>从研究到业务落地</p></div>
+        <article class="experience-block reveal"><div class="experience-label"><span>01</span><p>实习经历</p></div><div class="experience-body">
+          <div class="experience-entry"><p class="period">2026.04 — 2026.09</p><h3>蚂蚁集团 · 研究算法实习生</h3><p>参与多模态网页与文档全模态检索：以 Qwen3-VL-30B-A3B 构建 2D bbox 数据、基于 MMEB 训练视觉嵌入模型，并通过 SVD 多任务 LoRA 与 GRPO 优化推理链路。</p><div class="inline-tags"><span>多模态检索</span><span>GRPO</span><span>LoRA</span><span>MMEBv1 +2.6 / +3.8</span></div></div>
+          <div class="experience-entry"><p class="period">2025.01 — 2025.07</p><h3>合同可信风险监测项目 · 算法实习</h3><p>围绕合同与规章审查，构建实体关系抽取、LightRAG 检索及 Plan-and-Execute + MCP 工作流；通过 DOM 行级锚点与 RAG 提升审查可追溯性。</p><div class="inline-tags"><span>LightRAG</span><span>知识图谱</span><span>MCP</span><span>检索 +32%</span></div></div>
+          <div class="experience-entry"><p class="period">2024.03 — 2024.12</p><h3>金融垂域大模型项目 · 算法与应用开发</h3><p>覆盖金融问答数据构建、ChatGLM3 SFT/DPO、推理部署与多模型平台建设，形成从模型训练到服务交付的闭环。</p><div class="inline-tags"><span>SFT / DPO</span><span>FastChat</span><span>LangChain</span><span>GPT-4 评测 +10.8pts</span></div></div>
+        </div></article>
+        <article class="experience-block reveal"><div class="experience-label"><span>02</span><p>项目经历</p></div><div class="experience-body project-summary">
+          <a href="finance.html"><strong>金融垂域问答模型训练</strong><span>模型训练、昇腾推理与问答评测</span></a><a href="codura.html"><strong>Codura · AI 代码编程助手</strong><span>IDE 内代码补全、问答与诊断</span></a><a href="compliance.html"><strong>合同智能审查系统</strong><span>RAG、知识图谱与审查工作流</span></a><a href="talent.html"><strong>AI 智能人才引擎</strong><span>Text-to-SQL 与业务校验</span></a><a href="cad-system.html"><strong>广诚 CAD 内容识别系统</strong><span>多源工程资料的结构化识别</span></a><a href="ai-projects.html#llm-gate"><strong>LLMGate 大模型网关</strong><span>多模型接入、流式代理与治理</span></a>
+        </div></article>
+        <article class="experience-block reveal"><div class="experience-label"><span>03</span><p>科研经历</p></div><div class="experience-body research-entry"><p class="period">2026.04 — 2026.08 · 第一作者 · 投稿中</p><h3>KePIR：面向多模态检索的算法研究</h3><p>围绕多模态检索中的表示学习与检索增强开展研究，在 M-BEIR 上取得 52.01 的平均分，较 LamRA-Ret 与 CORAL 分别提升 0.97、1.79。</p><div class="inline-tags"><span>Multimodal Retrieval</span><span>M-BEIR</span><span>Representation Learning</span></div></div></article>
+        <article class="experience-block reveal"><div class="experience-label"><span>04</span><p>竞赛经历</p></div><div class="experience-body competition-entry"><p class="period">2024.10 — 2024.12 · 太初 RAG 大模型开发任务挑战赛 · 第 3 / 314</p><h3>Teco-RAG：为多源异构文档建立可靠的检索链路</h3><p>针对 PDF、PPTX、TXT 等材料在版式、列序和文本组织上的差异，设计文件加载、结构化切分、混合检索与答案自校正的一体化流程。实现 PDF→Markdown、双栏 PDF 与 PPTX 专用加载器，结合多查询 RRF、重排与二次检索，使系统从“能读文件”进一步变为“能稳定回答”。</p><div class="competition-path"><span>多源文件解析</span><i>→</i><span>结构化切分</span><i>→</i><span>混合检索 + 重排</span><i>→</i><span>二次检索 / 自校正</span></div><div class="metric-row"><div><strong>0.6318</strong><span>原始框架</span></div><div><strong>0.6733</strong><span>初版方案</span></div><div><strong>0.6950</strong><span>最终方案</span></div><div><strong>67.74%</strong><span>问答准确率记录</span></div></div><a class="text-link" href="tecorag.html">查看太初比赛作品详情 <span>↗</span></a></div></article>
+        <article class="experience-block reveal"><div class="experience-label"><span>05</span><p>奖项与证书</p></div><div class="experience-body awards-grid"><div><strong>华东交通大学</strong><span>软件工程专业 GPA 4.12 / 5.0，专业排名 1 / 139</span></div><div><strong>苏州大学</strong><span>计算机技术硕士研究生（推免）</span></div><div><strong>开放原子大赛</strong><span>太初 RAG 大模型开发任务挑战赛 · 第 3 / 314</span></div></div></article>
       </section>
 
-      <section class="intro section-wrap reveal">
-        <p class="eyebrow">PROJECT FOCUS</p>
-        <div class="intro-grid">
-          <h2>从模型适配到<br />业务交付</h2>
-          <p>作品集收录工程资料处理、金融垂域模型训练、代码辅助、合规审查与人才数据问答等项目。每个项目均以业务问题、系统能力和可验证结果为主线呈现。</p>
-        </div>
-      </section>
-
-      <section class="resume-preview section-wrap reveal">
-        <div><p class="eyebrow">RESUME</p><h2>教育、研究与<br />工程实践</h2></div>
-        <div><p>除项目作品外，网站同步收录研究型算法实习、多模态检索研究、RAG 竞赛经历及专业技能，方便在一次访问中完整了解我的技术路径。</p><a class="text-link" href="resume.html">查看完整个人简历 <span>↗</span></a></div>
-      </section>
-
-      <section class="project-section" id="projects">
-        <div class="section-wrap section-heading reveal">
-          <div>
-            <p class="eyebrow">SELECTED WORK</p>
-            <h2>项目精选</h2>
-          </div>
-          <p>06 / 项目</p>
-        </div>
-        <div class="project-list">
-          <a class="project-row reveal" href="cad-system.html">
-            <span class="project-index">01</span>
-            <div class="project-title"><h3>广诚 CAD 内容识别系统</h3><p>工程资料智能归集、识别与结构化输出</p></div>
-            <div class="project-meta"><span>OCR</span><span>多源文件</span><span>规则解析</span></div>
-            <span class="project-arrow">↗</span>
-          </a>
-          <a class="project-row reveal" href="ai-projects.html#finance">
-            <span class="project-index">02</span>
-            <div class="project-title"><h3>金融垂域模型训练</h3><p>模型适配、微调、推理与部署</p></div>
-            <div class="project-meta"><span>Finetune</span><span>Ascend NPU</span><span>14B</span></div>
-            <span class="project-arrow">↗</span>
-          </a>
-          <a class="project-row reveal" href="ai-projects.html#codura">
-            <span class="project-index">03</span>
-            <div class="project-title"><h3>Codura 代码助手</h3><p>面向开发者的代码补全、问答与修复</p></div>
-            <div class="project-meta"><span>IntelliJ</span><span>Code AI</span><span>400+</span></div>
-            <span class="project-arrow">↗</span>
-          </a>
-          <a class="project-row reveal" href="ai-projects.html#llm-gate">
-            <span class="project-index">04</span>
-            <div class="project-title"><h3>LLMGate 大模型网关</h3><p>多模型调用的统一接入、路由与治理</p></div>
-            <div class="project-meta"><span>OpenAI API</span><span>SSE</span><span>Netty</span></div>
-            <span class="project-arrow">↗</span>
-          </a>
-          <a class="project-row reveal" href="ai-projects.html#compliance">
-            <span class="project-index">05</span>
-            <div class="project-title"><h3>智能审查系统</h3><p>合同与规章的可追溯合规审查</p></div>
-            <div class="project-meta"><span>RAG</span><span>知识图谱</span><span>GRC</span></div>
-            <span class="project-arrow">↗</span>
-          </a>
-          <a class="project-row reveal" href="ai-projects.html#talent">
-            <span class="project-index">06</span>
-            <div class="project-title"><h3>AI 智能人才引擎</h3><p>自然语言驱动的人才数据查询与分析</p></div>
-            <div class="project-meta"><span>Text-to-SQL</span><span>验证机制</span><span>LLM</span></div>
-            <span class="project-arrow">↗</span>
-          </a>
-        </div>
-      </section>
-
-      <section class="evidence-band">
-        <div class="section-wrap evidence-grid reveal">
-          <p class="eyebrow">SELECTED EVIDENCE</p>
-          <div class="evidence-item"><strong>93%+</strong><span>CAD 多源数据字段提取准确率</span></div>
-          <div class="evidence-item"><strong>35.1%</strong><span>Qwen2.5-14B 在昇腾 NPU 平台的推理提升</span></div>
-          <div class="evidence-item"><strong>5–10 min</strong><span>≤20 页合同或规章的智能初审时间</span></div>
-        </div>
+      <section class="portfolio-section" id="portfolio">
+        <div class="section-wrap section-heading reveal"><div><p class="eyebrow">SELECTED PORTFOLIO</p><h2>作品集</h2></div><p>横向浏览 · 点击进入详情</p></div>
+        <div class="portfolio-carousel-wrap reveal"><button class="carousel-control carousel-prev" type="button" aria-label="上一项">←</button><div class="portfolio-carousel" aria-label="项目作品轮播">
+          <a class="portfolio-card portfolio-finance" href="finance.html"><span>01</span><p>MODEL TRAINING</p><h3>金融垂域<br />问答模型训练</h3><small>昇腾推理 · SFT / DPO · 评测</small><b>↗</b></a><a class="portfolio-card portfolio-codura" href="codura.html"><span>02</span><p>DEVELOPER TOOL</p><h3>Codura · AI<br />代码编程助手</h3><small>IntelliJ · 代码补全 · 流式交互</small><b>↗</b></a><a class="portfolio-card portfolio-compliance" href="compliance.html"><span>03</span><p>RAG WORKFLOW</p><h3>合同智能<br />审查系统</h3><small>知识图谱 · RAG · 审查闭环</small><b>↗</b></a><a class="portfolio-card portfolio-talent" href="talent.html"><span>04</span><p>DATA INTELLIGENCE</p><h3>AI 智能<br />人才引擎</h3><small>Text-to-SQL · 查询验证</small><b>↗</b></a><a class="portfolio-card portfolio-teco" href="tecorag.html"><span>05</span><p>COMPETITION PROJECT</p><h3>Teco-RAG<br />太初比赛作品</h3><small>文档解析 · 检索增强 · 自校正</small><b>↗</b></a>
+        </div><button class="carousel-control carousel-next" type="button" aria-label="下一项">→</button></div>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <span>刘腾 · 苏州大学</span>
-      <span>AI PROJECT PORTFOLIO</span>
-      <a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">返回顶部 ↑</a>
-    </footer>
+    <footer class="site-footer"><span>刘腾 · 苏州大学</span><span>AI PROJECT PORTFOLIO</span><a href="#top">返回顶部 ↑</a></footer>
   </body>
 </html>
