@@ -2,6 +2,7 @@
 :root {
   --accent: #6077ee;
   --sans: Inter, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  --display: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
   --serif: "Songti SC", "STSong", "Noto Serif SC", "Iowan Old Style", Georgia, serif;
   --paper: #f7f8fb;
   --line: #dde1e8;
@@ -37,6 +38,19 @@ body {
 .metric-row strong {
   font-family: var(--serif);
   font-weight: 500;
+}
+
+/* Product-oriented display type: remove the overly literary Songti feel from key headings. */
+.identity h1,
+.section-heading h2,
+.portfolio-card h3 {
+  font-family: var(--display);
+  font-weight: 650;
+  letter-spacing: -0.07em;
+}
+
+.identity h1 {
+  letter-spacing: -0.1em;
 }
 
 .section-heading h2 {
@@ -114,6 +128,7 @@ body {
 
 .portfolio-section { padding: 100px 0 120px; overflow: hidden; background: #11151d; color: #fff; }.portfolio-section .eyebrow,.portfolio-section .section-heading > p { color: #a7adba; }.portfolio-section .section-heading { margin-bottom: 37px; }.portfolio-section .section-heading h2 { color: #fff; }
 .portfolio-carousel-wrap { position: relative; width: min(1500px, calc(100% - 42px)); margin: 0 auto; }.portfolio-carousel { display: flex; gap: 16px; overflow-x: auto; padding: 0 3px 16px; scrollbar-width: none; scroll-behavior: smooth; scroll-snap-type: x mandatory; }.portfolio-carousel.is-continuous { scroll-behavior: auto; scroll-snap-type: none; }.portfolio-carousel::-webkit-scrollbar { display: none; }
+.portfolio-view-actions { display: flex; align-items: center; gap: 20px; }.portfolio-section .portfolio-view-actions > p { margin: 0; color: #a7adba; font-size: 13px; }.portfolio-view-toggle { padding: 0 0 3px; border: 0; border-bottom: 1px solid rgba(255,255,255,.72); background: transparent; color: #fff; cursor: pointer; font: 600 13px/1.5 var(--sans); }.portfolio-view-toggle span { margin-left: 5px; font-size: 15px; }.portfolio-view-toggle:hover { color: #b9c7ff; border-color: #b9c7ff; }.portfolio-carousel.is-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); overflow: visible; padding-bottom: 0; }.portfolio-carousel.is-grid .portfolio-card { width: 100%; min-width: 0; min-height: 350px; }.portfolio-carousel.is-grid .portfolio-card-copy { display: none; }
 .portfolio-card { position: relative; display: flex; width: min(380px, 78vw); min-width: min(380px, 78vw); min-height: 400px; flex-direction: column; padding: 25px; overflow: hidden; color: #fff; scroll-snap-align: start; transition: transform .25s ease; }.portfolio-card:hover { transform: translateY(-7px); }.portfolio-card span { font-size: 12px; opacity: .75; }.portfolio-card p { margin: auto 0 9px; font-size: 11px; letter-spacing: .12em; opacity: .75; }.portfolio-card h3 { margin: 0; font-family: var(--serif); font-size: 35px; line-height: 1.16; font-weight: 500; }.portfolio-card small { margin-top: 17px; font-size: 12px; opacity: .84; }.portfolio-card b { position: absolute; right: 23px; bottom: 18px; font-size: 22px; }.portfolio-finance { background: linear-gradient(135deg,#101c31,#26578f); }.portfolio-codura { background: linear-gradient(135deg,#5c2f38,#bc6643); }.portfolio-compliance { background: linear-gradient(135deg,#132d30,#43826f); }.portfolio-talent { background: linear-gradient(135deg,#302251,#7255bb); }.portfolio-teco { background: linear-gradient(135deg,#00308f,#00a6d8); }
 .portfolio-card-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; opacity: .78; transition: transform .5s ease; }.portfolio-card::after { position: absolute; inset: 0; content: ""; background: linear-gradient(180deg, rgba(8,12,20,.18) 0%, rgba(8,12,20,.08) 32%, rgba(8,12,20,.87) 80%, rgba(8,12,20,.96) 100%); }.portfolio-card > span, .portfolio-card > p, .portfolio-card > h3, .portfolio-card > small, .portfolio-card > b { position: relative; z-index: 1; }.portfolio-card > b { position: absolute; }.portfolio-card:hover .portfolio-card-image { transform: scale(1.04); }.portfolio-finance .portfolio-card-image { object-fit: contain; background: #06080d; }.portfolio-codura .portfolio-card-image { object-position: left top; }.portfolio-teco .portfolio-card-image { object-fit: contain; background: #f5f7fb; }
 .portfolio-codura { background: linear-gradient(145deg, #e7eeeb, #cfdcda); color: #153634; }.portfolio-codura .portfolio-card-image { inset: 48px 24px auto; width: calc(100% - 48px); height: 112px; object-fit: contain; object-position: center; opacity: 1; }.portfolio-codura::after { background: linear-gradient(180deg, rgba(231,238,235,0) 0%, rgba(231,238,235,.12) 43%, rgba(231,238,235,.92) 69%, rgba(231,238,235,.98) 100%); }.portfolio-codura:hover .portfolio-card-image { transform: none; }
@@ -767,4 +782,21 @@ body {
   .identity-contact { margin-top: -18px; margin-bottom: 25px; gap: 8px 14px; font-size: 12px; }
   .talent-duo { gap: 18px; padding-bottom: 0; }
   .talent-duo figure:nth-child(2) { margin-top: 0; }
+}
+
+/* Final display-type override: contemporary Chinese sans for the public-facing portfolio. */
+.identity h1,
+.section-heading h2,
+.portfolio-card h3 {
+  font-family: var(--display);
+  font-weight: 650;
+  letter-spacing: -0.07em;
+}
+
+.identity h1 { letter-spacing: -0.1em; }
+
+@media (max-width: 760px) {
+  .portfolio-view-actions { align-items: flex-end; flex-direction: column; gap: 9px; }
+  .portfolio-carousel.is-grid { grid-template-columns: 1fr; }
+  .portfolio-carousel.is-grid .portfolio-card { min-height: 330px; }
 }

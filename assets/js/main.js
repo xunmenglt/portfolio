@@ -24,27 +24,11 @@ if ('IntersectionObserver' in window) {
 }
 
 const carousel = document.querySelector('.portfolio-carousel');
-const previousCard = document.querySelector('.carousel-prev');
-const nextCard = document.querySelector('.carousel-next');
+const portfolioViewToggle = document.querySelector('.portfolio-view-toggle');
 
 if (carousel) {
-  const moveCarousel = (direction) => {
-    const card = carousel.querySelector('.portfolio-card');
-    const distance = (card?.getBoundingClientRect().width || 320) + 16;
-    const nextPosition = carousel.scrollLeft + direction * distance;
-    const endPosition = carousel.scrollWidth - carousel.clientWidth - 4;
-    if (direction > 0 && nextPosition >= endPosition) {
-      carousel.scrollTo({ left: 0, behavior: 'smooth' });
-      return;
-    }
-    if (direction < 0 && nextPosition < 4) {
-      carousel.scrollTo({ left: endPosition, behavior: 'smooth' });
-      return;
-    }
-    carousel.scrollBy({ left: direction * distance, behavior: 'smooth' });
-  };
-  previousCard?.addEventListener('click', () => moveCarousel(-1));
-  nextCard?.addEventListener('click', () => moveCarousel(1));
+  let pauseAutoScroll = () => {};
+  let resumeAutoScroll = () => {};
 
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const sourceCards = [...carousel.querySelectorAll('.portfolio-card')];
@@ -71,11 +55,13 @@ if (carousel) {
       lastFrame = undefined;
       virtualScroll = carousel.scrollLeft;
     };
+    pauseAutoScroll = pause;
+    resumeAutoScroll = resume;
     const tick = (timestamp) => {
       if (!lastFrame) lastFrame = timestamp;
       const elapsed = Math.min(timestamp - lastFrame, 40);
       lastFrame = timestamp;
-      if (!isPaused && loopPoint) {
+      if (!isPaused && !carousel.classList.contains('is-grid') && loopPoint) {
         virtualScroll += elapsed * 0.024;
         if (virtualScroll >= loopPoint) virtualScroll -= loopPoint;
         carousel.scrollLeft = virtualScroll;
@@ -95,6 +81,18 @@ if (carousel) {
     carousel.addEventListener('touchstart', pause, { passive: true });
     carousel.addEventListener('touchend', () => window.setTimeout(resume, 1000), { passive: true });
   }
+
+  portfolioViewToggle?.addEventListener('click', () => {
+    const isGrid = carousel.classList.toggle('is-grid');
+    portfolioViewToggle.setAttribute('aria-expanded', String(isGrid));
+    portfolioViewToggle.innerHTML = isGrid ? '返回循环浏览 <span>↖</span>' : '查看全部 <span>↗</span>';
+    if (isGrid) {
+      pauseAutoScroll();
+      carousel.scrollLeft = 0;
+    } else {
+      resumeAutoScroll();
+    }
+  });
 }
 
 const lifeToggle = document.querySelector('.life-toggle');
