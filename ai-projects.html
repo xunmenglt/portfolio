@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="刘腾的大模型应用项目：金融垂域模型训练、Codura 代码助手、智能审查系统和 AI 智能人才引擎。" />
+    <title>大模型应用项目｜刘腾作品集</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script defer src="assets/js/main.js"></script>
+  </head>
+  <body class="detail-page ai-page">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="返回首页">LT<span>.</span></a>
+      <button class="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false">菜单</button>
+      <nav class="site-nav" aria-label="主导航"><a href="index.html">首页</a><a href="cad-system.html">工程智能</a><a class="active" href="ai-projects.html">大模型应用</a></nav>
+    </header>
+    <main>
+      <section class="detail-hero section-wrap">
+        <a class="back-link" href="index.html#projects">← 所有项目</a>
+        <p class="eyebrow">02–05 / LARGE LANGUAGE MODEL APPLICATIONS</p>
+        <h1>面向业务场景的<br /><em>大模型应用</em></h1>
+        <div class="detail-lead"><p>覆盖模型适配、微调训练、检索增强、代码智能、文本审查及 Text-to-SQL 等方向，服务于金融、研发、合规和人力资源业务。</p><ul class="tag-list"><li>模型训练</li><li>推理部署</li><li>RAG</li><li>Text-to-SQL</li></ul></div>
+      </section>
+
+      <article class="feature-project section-wrap" id="finance">
+        <div class="feature-heading reveal"><p class="eyebrow">02 / FINANCE LLM</p><h2>金融垂域模型训练</h2><p>为金融客服业务问答与问答对构建场景，完成开源模型的适配、训练、推理与部署。</p></div>
+        <div class="metric-strip reveal"><div><strong>6</strong><span>已适配组织</span></div><div><strong>21</strong><span>开源模型适配</span></div><div><strong>35.1%</strong><span>NPU 平台推理提升</span></div><div><strong>20–30</strong><span>14B 单卡支持人数</span></div></div>
+        <div class="content-split reveal"><img src="assets/images/finance-qa.png" alt="金融业务问答示例" /><div><h3>训练与部署结果</h3><ul class="plain-list"><li>金融垂域任务平均微调效果最高较 GPT-3.5 提升 10.8 个百分点。</li><li>Qwen2.5-14B 模型适配至昇腾 NPU 算力平台后，推理效果提升 35.1%。</li><li>14B 模型单卡以 20 token/s 为基准，最高可支持 20–30 人使用。</li></ul></div></div>
+        <figure class="wide-image reveal"><img src="assets/images/finance-evaluation.png" alt="金融模型问答对生成的评测界面" /><figcaption>模型问答对构建与质量评分</figcaption></figure>
+      </article>
+
+      <article class="feature-project soft-bg" id="codura"><div class="section-wrap"><div class="feature-heading reveal"><p class="eyebrow">03 / DEVELOPER TOOLING</p><h2>Codura 代码助手</h2><p>面向开发人员的智能编程辅助工具，集成代码补全、片段生成、代码解释、错误检测与修复能力。</p></div><div class="content-split reveal"><img src="assets/images/codura-hero.png" alt="Codura 智能编程助手官网界面" /><div><h3>应用落地</h3><p>支持 IntelliJ 编程软件，已在企业落地应用，累计服务 400+ 企业员工。</p><a class="text-link" href="https://xunmenglt.github.io/codura-website" target="_blank" rel="noopener">访问 Codura 官网 <span>↗</span></a></div></div></div></article>
+
+      <article class="feature-project section-wrap" id="compliance"><div class="feature-heading reveal"><p class="eyebrow">04 / COMPLIANCE AI</p><h2>智能审查系统</h2><p>服务于治理、风险、合规领域的制度文件、合同条款及内部政策审查。</p></div><div class="content-split reverse reveal"><img src="assets/images/compliance-architecture.png" alt="智能审查系统架构图" /><div><h3>可追溯的合规审查</h3><ul class="plain-list"><li>采用大模型驱动的检索增强生成、知识图谱与文本结构化解析。</li><li>支持合同审查、规章差异分析、合同模板推荐和内规外化。</li><li>合同或规章不超过 20 页时，智能初审可在 5–10 分钟内完成。</li></ul></div></div></article>
+
+      <article class="feature-project dark-feature" id="talent"><div class="section-wrap"><div class="feature-heading reveal"><p class="eyebrow">05 / TALENT ANALYTICS</p><h2>AI 智能人才引擎</h2><p>结合 Text-to-SQL 与大语言模型，帮助组织查询并分析人才的绩效、个性特征与行为偏好等数据。</p></div><div class="content-split reveal"><img src="assets/images/talent-chat.png" alt="人才数据查询引擎的对话界面" /><div><h3>可靠查询机制</h3><p>系统将复杂问题拆分为多个子问题，并引入 SQL 生成校验模块，对大模型生成的查询进行多重语义验证。</p><div class="mini-table" role="table" aria-label="人才数据任务回答准确率"><div role="row"><b role="columnheader">方案</b><b role="columnheader">DeepSeek-V3</b><b role="columnheader">Qwen3-32B</b><b role="columnheader">Qwen3-235B</b></div><div role="row"><span role="cell">DAIL-SQL</span><span role="cell">85%</span><span role="cell">70%</span><span role="cell">90%</span></div><div role="row"><span role="cell">Ours</span><span role="cell">100%</span><span role="cell">80%</span><span role="cell">90%</span></div></div></div></div></div></article>
+    </main>
+    <footer class="site-footer"><span>刘腾 · 苏州大学</span><span>02–05 / 05</span><a href="index.html#projects">所有项目 ↑</a></footer>
+  </body>
+</html>
