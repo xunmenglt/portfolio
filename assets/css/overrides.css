@@ -795,6 +795,21 @@ body {
 
 .identity h1 { letter-spacing: -0.1em; }
 
+/* Lucide icon system */
+.lucide-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex: 0 0 auto;
+  vertical-align: -0.14em;
+}
+
+.text-link .lucide-icon { margin-left: 4px; }
+.portfolio-card b .lucide-icon { width: 1.08em; height: 1.08em; }
+.portfolio-view-toggle .lucide-icon,
+.life-toggle .lucide-icon { margin-left: 5px; transition: transform .25s ease; }
+.life-gallery.expanded + * .lucide-icon { transform: rotate(180deg); }
+
 @media (max-width: 760px) {
   .portfolio-view-actions { align-items: flex-end; flex-direction: column; gap: 9px; }
   .portfolio-carousel.is-grid { grid-template-columns: 1fr; }

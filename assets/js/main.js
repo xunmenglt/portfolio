@@ -1,6 +1,60 @@
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.site-nav');
 
+const lucideGlyphs = {
+  '←': 'arrow-left',
+  '→': 'arrow-right',
+  '↑': 'arrow-up',
+  '↓': 'chevron-down',
+  '↗': 'arrow-up-right',
+  '↖': 'corner-up-left',
+};
+
+const refreshLucideIcons = () => {
+  window.lucide?.createIcons({
+    icons: window.lucide.icons,
+    attrs: { 'aria-hidden': 'true', 'stroke-width': '1.8' },
+  });
+};
+
+const replaceTextGlyphsWithIcons = () => {
+  const matcher = /[←→↑↓↗↖]/g;
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode: (node) => {
+      const parentTag = node.parentElement?.tagName;
+      if (!node.nodeValue?.match(matcher) || ['SCRIPT', 'STYLE', 'SVG'].includes(parentTag)) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    },
+  });
+  const textNodes = [];
+  while (walker.nextNode()) textNodes.push(walker.currentNode);
+  textNodes.forEach((node) => {
+    const fragment = document.createDocumentFragment();
+    node.nodeValue.split(/([←→↑↓↗↖])/).forEach((part) => {
+      if (lucideGlyphs[part]) {
+        const icon = document.createElement('i');
+        icon.dataset.lucide = lucideGlyphs[part];
+        icon.className = 'lucide-icon';
+        fragment.append(icon);
+      } else if (part) {
+        fragment.append(document.createTextNode(part));
+      }
+    });
+    node.replaceWith(fragment);
+  });
+  refreshLucideIcons();
+};
+
+if (window.lucide) {
+  replaceTextGlyphsWithIcons();
+} else {
+  const lucideScript = document.createElement('script');
+  lucideScript.src = 'https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js';
+  lucideScript.async = true;
+  lucideScript.addEventListener('load', replaceTextGlyphsWithIcons);
+  document.head.append(lucideScript);
+}
+
 if (menuButton && navigation) {
   menuButton.addEventListener('click', () => {
     const isOpen = navigation.classList.toggle('open');
@@ -85,7 +139,10 @@ if (carousel) {
   portfolioViewToggle?.addEventListener('click', () => {
     const isGrid = carousel.classList.toggle('is-grid');
     portfolioViewToggle.setAttribute('aria-expanded', String(isGrid));
-    portfolioViewToggle.innerHTML = isGrid ? '返回循环浏览 <span>↖</span>' : '查看全部 <span>↗</span>';
+    portfolioViewToggle.innerHTML = isGrid
+      ? '返回循环浏览 <i data-lucide="corner-up-left" class="lucide-icon" aria-hidden="true"></i>'
+      : '查看全部 <i data-lucide="arrow-up-right" class="lucide-icon" aria-hidden="true"></i>';
+    refreshLucideIcons();
     if (isGrid) {
       pauseAutoScroll();
       carousel.scrollLeft = 0;
@@ -104,6 +161,9 @@ if (lifeToggle && lifeGallery && lifeSection) {
     const isExpanded = lifeGallery.classList.toggle('expanded');
     lifeSection.classList.toggle('photos-expanded', isExpanded);
     lifeToggle.setAttribute('aria-expanded', String(isExpanded));
-    lifeToggle.innerHTML = isExpanded ? '收起照片 <span>↑</span>' : '展开全部 <span>↓</span>';
+    lifeToggle.innerHTML = isExpanded
+      ? '收起照片 <i data-lucide="chevron-up" class="lucide-icon" aria-hidden="true"></i>'
+      : '展开全部 <i data-lucide="chevron-down" class="lucide-icon" aria-hidden="true"></i>';
+    refreshLucideIcons();
   });
 }
