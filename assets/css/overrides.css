@@ -1,7 +1,52 @@
 /* Small layout refinements kept separate from the shared stylesheet. */
 :root {
-  --accent: #627bff;
-  --serif: "Iowan Old Style", "Songti SC", "STSong", Georgia, serif;
+  --accent: #6077ee;
+  --sans: Inter, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+  --serif: "Songti SC", "STSong", "Noto Serif SC", "Iowan Old Style", Georgia, serif;
+  --paper: #f7f8fb;
+  --line: #dde1e8;
+}
+
+/* Typography: clear sans-serif information layers, restrained editorial display type. */
+body {
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.eyebrow,
+.site-nav,
+.identity-role,
+.identity-contact,
+.period,
+.inline-tags,
+.portfolio-card p,
+.portfolio-card small,
+.button,
+.text-link {
+  font-family: var(--sans);
+}
+
+.section-heading h2,
+.identity h1,
+.experience-body h3,
+.portfolio-card h3,
+.project-hero h1,
+.visual-heading h2,
+.tech-panel h2,
+.metric-row strong {
+  font-family: var(--serif);
+  font-weight: 500;
+}
+
+.section-heading h2 {
+  letter-spacing: -0.055em;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
 }
 
 .home-hero h1 {
